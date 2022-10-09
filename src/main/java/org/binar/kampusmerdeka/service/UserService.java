@@ -8,5 +8,5 @@ import java.util.List;
 public interface UserService {
     String insertUser(UserEntity user);
 
-    List<UserEntity> getAllUser();
+    List<UserEntity> getAllUser(String nama);
 }

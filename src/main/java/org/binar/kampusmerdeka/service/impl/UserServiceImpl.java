@@ -22,7 +22,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserEntity> getAllUser() {
+    public List<UserEntity> getAllUser(String nama) {
+        System.out.println(nama);
         return userRepo.findAll();
     }
 }
