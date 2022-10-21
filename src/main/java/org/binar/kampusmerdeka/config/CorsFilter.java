@@ -17,12 +17,10 @@ public class CorsFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpServletRequest request= (HttpServletRequest) servletRequest;
 
-        response.setHeader("Access-Control-Allow-Origin", request.getHeader("origin"));
-        response.setHeader("Access-Control-Allow-Methods", "GET,POST,DELETE,PUT,OPTIONS");
+        response.setHeader("Access-Control-Allow-Origin", response.getHeader("origin"));
+        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
         response.setHeader("Access-Control-Allow-Headers", "*");
-//        response.setHeader("Access-Control-Allow-Credentials", true);
-//        response.setHeader("Access-Control-Max-Age", 180);
-        filterChain.doFilter(servletRequest, servletResponse);
+        response.setHeader("Access-Control-Allow-Credentials", String.valueOf(true));
     }
 
     @Override
