@@ -1,5 +1,6 @@
 package org.binar.kampusmerdeka.config;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,6 +25,7 @@ import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
 //    @Bean
 //    public UserDetailsService userDetailsService() {
@@ -40,19 +42,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
         http.authorizeRequests()
                 .antMatchers("/api/**").hasRole("USER")
                 .antMatchers("/swagger-ui/**","/v3/api-docs/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin().permitAll()
-                .and()
-                .logout()
-                .permitAll()
-                .and().cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues())
-                .and().csrf().disable();
-    }
-
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
+                .anyRequest().authenticated();
+        http.formLogin().permitAll();
+        http.logout().permitAll();
+        http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
+        http.csrf().disable();
     }
 }
