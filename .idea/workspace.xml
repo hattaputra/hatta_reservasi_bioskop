@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b03e1e72-64ee-4782-ae87-7c01011e7880" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/binar/kampusmerdeka/config/CorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/binar/kampusmerdeka/config/CorsFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/binar/kampusmerdeka/config/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/binar/kampusmerdeka/config/SpringSecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
